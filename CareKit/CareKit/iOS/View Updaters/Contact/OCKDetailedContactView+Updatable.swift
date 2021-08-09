@@ -34,7 +34,7 @@ import CareKitUI
 import UIKit
 
 extension OCKDetailedContactView: OCKContactUpdatable {
-    func updateWith(contact: OCKAnyContact?, animated: Bool) {
+    public func updateWith(contact: OCKAnyContact?, animated: Bool) {
         headerView.updateWith(contact: contact, animated: animated)
 
         guard let contact = contact else {

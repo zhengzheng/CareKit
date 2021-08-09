@@ -34,7 +34,7 @@ import CareKitUI
 import UIKit
 
 extension OCKHeaderView: OCKEventUpdatable, OCKTaskUpdatable, OCKContactUpdatable {
-    func updateWith(event: OCKAnyEvent?, animated: Bool) {
+    public func updateWith(event: OCKAnyEvent?, animated: Bool) {
         guard let event = event else {
             clearView(animated: animated)
             return
@@ -45,7 +45,7 @@ extension OCKHeaderView: OCKEventUpdatable, OCKTaskUpdatable, OCKContactUpdatabl
         updateAccessibilityLabel()
     }
 
-    func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
+    public func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
         guard let events = events, !events.isEmpty else {
             clearView(animated: animated)
             return
@@ -56,7 +56,7 @@ extension OCKHeaderView: OCKEventUpdatable, OCKTaskUpdatable, OCKContactUpdatabl
         updateAccessibilityLabel()
     }
 
-    func updateWith(contact: OCKAnyContact?, animated: Bool) {
+    public func updateWith(contact: OCKAnyContact?, animated: Bool) {
         guard let contact = contact else {
             clearView(animated: animated)
             return

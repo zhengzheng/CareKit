@@ -72,7 +72,7 @@ struct OCKScheduleUtility {
 
         switch event.scheduleEvent.element.duration {
 
-        case .allDay: return "Anytime"
+        case .allDay: return loc("ANYTIME")
         case .seconds:
             if includesEnd && event.scheduleEvent.start != event.scheduleEvent.end {
                 let start = event.scheduleEvent.start

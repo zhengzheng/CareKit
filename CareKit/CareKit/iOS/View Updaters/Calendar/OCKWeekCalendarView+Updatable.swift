@@ -33,7 +33,7 @@ import CareKitUI
 import Foundation
 
 extension OCKWeekCalendarView: OCKCompletionStatesUpdatable {
-    func updateWith(states: [OCKCompletionState], animated: Bool) {
+    public func updateWith(states: [OCKCompletionState], animated: Bool) {
         // clear the view
         guard !states.isEmpty else {
             completionRingButtons.forEach {

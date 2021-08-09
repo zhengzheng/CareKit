@@ -33,7 +33,7 @@ import CareKitStore
 import CareKitUI
 
 extension OCKChecklistTaskView: OCKTaskUpdatable {
-    func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
+    public func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
         headerView.updateWith(events: events, animated: animated)
 
         guard let events = events, !events.isEmpty else {

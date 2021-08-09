@@ -34,7 +34,7 @@ import CareKitUI
 import UIKit
 
 extension OCKGridTaskView: OCKTaskUpdatable {
-    func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
+    public func updateWith(events: [OCKAnyEvent]?, animated: Bool) {
         headerView.updateWith(events: events, animated: animated)
 
         guard let events = events, !events.isEmpty else {
@@ -52,7 +52,7 @@ extension OCKGridTaskView: OCKTaskUpdatable {
 }
 
 extension OCKGridTaskCell: OCKEventUpdatable {
-    func updateWith(event: OCKAnyEvent?, animated: Bool) {
+    public func updateWith(event: OCKAnyEvent?, animated: Bool) {
         guard let event = event else {
             prepareForReuse()
             return

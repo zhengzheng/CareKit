@@ -33,7 +33,7 @@ import CareKitStore
 import CareKitUI
 
 extension OCKInstructionsTaskView: OCKEventUpdatable {
-    func updateWith(event: OCKAnyEvent?, animated: Bool) {
+    public func updateWith(event: OCKAnyEvent?, animated: Bool) {
         headerView.updateWith(event: event, animated: animated)
 
         guard let event = event else {

@@ -33,7 +33,7 @@ import CareKitStore
 import CareKitUI
 
 extension OCKSimpleContactView: OCKContactUpdatable {
-    func updateWith(contact: OCKAnyContact?, animated: Bool) {
+    public func updateWith(contact: OCKAnyContact?, animated: Bool) {
         headerView.updateWith(contact: contact, animated: animated)
     }
 }

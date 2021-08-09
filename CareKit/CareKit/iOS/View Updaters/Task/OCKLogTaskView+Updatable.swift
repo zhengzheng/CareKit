@@ -78,7 +78,7 @@ private extension OCKOutcomeValue {
 }
 
 extension OCKButtonLogTaskView: OCKEventUpdatable {
-    func updateWith(event: OCKAnyEvent?, animated: Bool) {
+    public func updateWith(event: OCKAnyEvent?, animated: Bool) {
         headerView.updateWith(event: event, animated: animated)
 
         guard let event = event else {

@@ -33,7 +33,7 @@ import CareKitStore
 import CareKitUI
 
 extension OCKCartesianChartView: OCKDataSeriesUpdatable {
-    func updateWith(dataSeries: [OCKDataSeries], animated: Bool) {
+    public func updateWith(dataSeries: [OCKDataSeries], animated: Bool) {
         graphView.dataSeries = dataSeries
     }
 }

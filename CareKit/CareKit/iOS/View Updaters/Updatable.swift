@@ -34,27 +34,27 @@ import CareKitUI
 import Foundation
 
 /// Can be updated with a list of events.
-protocol OCKTaskUpdatable {
+public protocol OCKTaskUpdatable {
     func updateWith(events: [OCKAnyEvent]?, animated: Bool)
 }
 
 /// Can be updated with an event.
-protocol OCKEventUpdatable {
+public protocol OCKEventUpdatable {
     func updateWith(event: OCKAnyEvent?, animated: Bool)
 }
 
 /// Can be updated with a contact.
-protocol OCKContactUpdatable {
+public protocol OCKContactUpdatable {
     func updateWith(contact: OCKAnyContact?, animated: Bool)
 }
 
 /// Can be updated with a data series.
-protocol OCKDataSeriesUpdatable {
+public protocol OCKDataSeriesUpdatable {
     func updateWith(dataSeries: [OCKDataSeries], animated: Bool)
 }
 
 /// Can be updated with a list of completion states.
-protocol OCKCompletionStatesUpdatable {
+public protocol OCKCompletionStatesUpdatable {
     func updateWith(states: [OCKCompletionState], animated: Bool)
 }
 

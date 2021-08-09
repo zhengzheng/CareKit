@@ -46,14 +46,14 @@ struct OCKScheduleUtility {
         return formatter
     }()
 
-    static func scheduleLabel(for events: [OCKAnyEvent]) -> String? {
+    public static func scheduleLabel(for events: [OCKAnyEvent]) -> String? {
         let result = [completionLabel(for: events), dateLabel(for: events)]
             .compactMap { $0 }
             .joined(separator: " ")
         return !result.isEmpty ? result : nil
     }
 
-    static func scheduleLabel(for event: OCKAnyEvent?) -> String? {
+    public static func scheduleLabel(for event: OCKAnyEvent?) -> String? {
         guard let event = event else { return nil }
         let result = [
             timeLabel(for: event),
@@ -65,7 +65,7 @@ struct OCKScheduleUtility {
         return !result.isEmpty ? result : nil
     }
 
-    static func timeLabel(for event: OCKAnyEvent, includesEnd: Bool = true) -> String {
+    public static func timeLabel(for event: OCKAnyEvent, includesEnd: Bool = true) -> String {
         if let customText = event.scheduleEvent.element.text {
             return customText
         }
@@ -84,7 +84,7 @@ struct OCKScheduleUtility {
         return label
     }
 
-    static func completedTimeLabel(for event: OCKAnyEvent) -> String? {
+    public static func completedTimeLabel(for event: OCKAnyEvent) -> String? {
         guard let completedDate = event.outcome?.values
             .max(by: { isMoreRecent(lhs: $0.createdDate, rhs: $1.createdDate) })?
             .createdDate

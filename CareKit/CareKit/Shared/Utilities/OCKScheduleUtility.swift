@@ -32,7 +32,7 @@ import CareKitStore
 import CareKitUI
 import Foundation
 
-struct OCKScheduleUtility {
+public struct OCKScheduleUtility {
 
     private static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()

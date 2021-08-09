@@ -128,15 +128,9 @@ public struct OCKScheduleUtility {
         guard !events.isEmpty else { return nil }
         let completed = events.filter { $0.outcome != nil }.count
         let remaining = events.count - completed
-        let bundle: Bundle?
-        #if SWIFT_PACKAGE
-        bundle = Bundle.module
-        #else
-        bundle = nil
-        #endif
         let format = OCKLocalization.localized("EVENTS_REMAINING",
                                                tableName: "Localizable",
-                                               bundle: bundle,
+                                               bundle: nil,
                                                value: "",
                                                comment: "The number of events that the user has not yet marked completed")
         return String.localizedStringWithFormat(format, remaining)

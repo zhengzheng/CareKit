@@ -31,45 +31,47 @@
 
 import UIKit
 
-struct LayoutDirection: OptionSet {
-    let rawValue: Int
+public struct LayoutDirection: OptionSet {
+    public let rawValue: Int
+    public init(rawValue: Self.RawValue) {
+        self.rawValue = rawValue
+    }
+    public static let top = LayoutDirection(rawValue: 1 << 0)
+    public static let bottom = LayoutDirection(rawValue: 1 << 1)
+    public static let leading = LayoutDirection(rawValue: 1 << 2)
+    public static let trailing = LayoutDirection(rawValue: 1 << 3)
 
-    static let top = LayoutDirection(rawValue: 1 << 0)
-    static let bottom = LayoutDirection(rawValue: 1 << 1)
-    static let leading = LayoutDirection(rawValue: 1 << 2)
-    static let trailing = LayoutDirection(rawValue: 1 << 3)
+    public static let horizontal: LayoutDirection = [.leading, .trailing]
+    public static let vertical: LayoutDirection = [.top, .bottom]
 
-    static let horizontal: LayoutDirection = [.leading, .trailing]
-    static let vertical: LayoutDirection = [.top, .bottom]
-
-    static let all: LayoutDirection = [.horizontal, .vertical]
+    public static let all: LayoutDirection = [.horizontal, .vertical]
 }
 
 extension UILayoutPriority {
-    static var almostRequired: UILayoutPriority {
+    public static var almostRequired: UILayoutPriority {
         return .required - 1
     }
 }
 
 extension NSLayoutConstraint {
-    func withPriority(_ new: UILayoutPriority) -> NSLayoutConstraint {
+    public func withPriority(_ new: UILayoutPriority) -> NSLayoutConstraint {
         priority = new
         return self
     }
 }
 
 extension UIView {
-    func setContentHuggingPriorities(_ new: UILayoutPriority) {
+    public func setContentHuggingPriorities(_ new: UILayoutPriority) {
         setContentHuggingPriority(new, for: .horizontal)
         setContentHuggingPriority(new, for: .vertical)
     }
 
-    func setContentCompressionResistancePriorities(_ new: UILayoutPriority) {
+    public func setContentCompressionResistancePriorities(_ new: UILayoutPriority) {
         setContentCompressionResistancePriority(new, for: .horizontal)
         setContentCompressionResistancePriority(new, for: .vertical)
     }
 
-    func constraints(equalTo other: UIView, directions: LayoutDirection = .all,
+    public func constraints(equalTo other: UIView, directions: LayoutDirection = .all,
                      priority: UILayoutPriority = .required) -> [NSLayoutConstraint] {
         var constraints: [NSLayoutConstraint] = []
         if directions.contains(.top) {
@@ -87,7 +89,7 @@ extension UIView {
         return constraints
     }
 
-    func constraints(equalTo layoutGuide: UILayoutGuide, directions: LayoutDirection = .all,
+    public func constraints(equalTo layoutGuide: UILayoutGuide, directions: LayoutDirection = .all,
                      priority: UILayoutPriority = .required) -> [NSLayoutConstraint] {
         var constraints: [NSLayoutConstraint] = []
         if directions.contains(.top) {
@@ -105,7 +107,7 @@ extension UIView {
         return constraints
     }
 
-    var isRightToLeft: Bool {
+    public var isRightToLeft: Bool {
         return UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft
     }
 }

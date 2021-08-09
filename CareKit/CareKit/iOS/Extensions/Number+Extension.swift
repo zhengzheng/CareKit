@@ -31,7 +31,7 @@
 
 import Foundation
 
-extension Double {
+public extension Double {
 
     private static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()

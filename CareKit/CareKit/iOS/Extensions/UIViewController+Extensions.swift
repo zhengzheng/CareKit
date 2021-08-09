@@ -32,7 +32,7 @@
 import CareKitUI
 import UIKit
 
-internal extension UIViewController {
+public extension UIViewController {
     func clearContainment() {
         willMove(toParent: nil)
         removeFromParent()

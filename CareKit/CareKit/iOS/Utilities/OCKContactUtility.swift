@@ -33,7 +33,7 @@ import Contacts
 import MapKit
 import UIKit
 
-struct OCKContactUtility {
+public struct OCKContactUtility {
     private static let addressFormatter: CNPostalAddressFormatter = {
         let formatter = CNPostalAddressFormatter()
         formatter.style = .mailingAddress
@@ -46,12 +46,12 @@ struct OCKContactUtility {
         return nameFormatter
     }()
 
-    static func string(from location: CNPostalAddress?) -> String? {
+    public static func string(from location: CNPostalAddress?) -> String? {
         guard let location = location else { return nil }
         return addressFormatter.string(from: location)
     }
 
-    static func string(from components: PersonNameComponents?) -> String? {
+    public static func string(from components: PersonNameComponents?) -> String? {
         guard let components = components else { return nil }
         return nameFormatter.string(from: components)
     }

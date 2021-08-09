@@ -32,7 +32,7 @@
 import CareKitStore
 import Foundation
 
-extension OCKOutcomeValue {
+public extension OCKOutcomeValue {
 
     // Helps to compare two values that are not of the same type. For example:
     //

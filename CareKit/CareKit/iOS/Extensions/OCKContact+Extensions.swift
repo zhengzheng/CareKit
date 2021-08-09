@@ -33,12 +33,12 @@ import CareKitStore
 import Contacts
 import Foundation
 
-private extension OCKLabeledValue {
+public extension OCKLabeledValue {
     func toLabeledString() -> CNLabeledValue<NSString> { CNLabeledValue(label: label, value: NSString(string: value)) }
     func toLabeledPhoneNumber() -> CNLabeledValue<CNPhoneNumber> { CNLabeledValue(label: label, value: CNPhoneNumber(stringValue: value)) }
 }
 
-private extension OCKPostalAddress {
+public extension OCKPostalAddress {
     func toCNLabeledValue() -> CNLabeledValue<CNPostalAddress> { CNLabeledValue(label: "", value: self) }
 }
 
